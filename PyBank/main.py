@@ -2,9 +2,6 @@
 import os
 # module for reading csv files
 import csv
-# module for converting dates
-import datetime
-
 
 # set the path for the file
 budget_csv = os.path.join("..", "PyBank", "budget_data.csv")
@@ -54,7 +51,27 @@ print("Average Change:", "$", "%.2f" % (sum(profitchgs) / len(profitchgs)))
 print("Greatest Increase in profits:", dates[index_greatest], "($", max(profitchgs), ")")
 print("Greatest Decrease in profits:", dates[index_lowest], "($", min(profitchgs), ")")
 
+#Establish strings to feed into output text file
 
+stringa = ("Total Months:  " + str(len(profits)) + "\n")
+stringb = ("Total:  " + "$" + str(sum(profits)) + "\n")
+stringc = ("Average Change:  " + "$" + str(sum(profitchgs) / len(profitchgs)) + "\n")
+stringd = ("Greatest Increase in profits: " + str(dates[index_greatest]) + "  $" + str(max(profitchgs)) + "\n")
+stringe = ("Greatest Decrease in profits: " + str(dates[index_lowest]) + "  $" + str(min(profitchgs)) + "\n")
+
+
+#Print output to text file
+output_file = os.path.join("..", "PyBank", "pybank_output.txt")
+with open(r"output_file","w+") as f:
+    f.write("Financial Analysis \n")
+    f.write("--------------------- \n")
+    f.write(stringa)
+    f.write(stringb)
+    f.write(stringc)
+    f.write(stringd)
+    f.write(stringe)
+    
+f.close
 
         
         

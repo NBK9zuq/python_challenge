@@ -99,8 +99,11 @@ print("---------------------")
 
 stringa = "Total Votes: " + str(row_count) + ("\n")
 stringb = str(candidates[0]) + "  " + str(percentages[0]) + "  (" + str(results[0]) + ")" + ("\n")
+stringc = str(candidates[1]) + "  " + str(percentages[1]) + "  (" + str(results[1]) + ")" + ("\n")
+stringd = str(candidates[2]) + "  " + str(percentages[2]) + "  (" + str(results[2]) + ")" + ("\n")
+stringe = str(candidates[3]) + "  " + str(percentages[3]) + "  (" + str(results[3]) + ")" + ("\n")
 
-
+stringf = str("Winner:  " + str(winner) + "\n")
 
 #7. EXPORT RESULTS TO A TEXT FILE
 
@@ -111,7 +114,12 @@ with open(r"output_file","w+") as f:
     f.write(stringa)
     f.write("---------------------\n")
     f.write(stringb)
-
+    f.write(stringc)
+    f.write(stringd)
+    f.write(stringe)
+    f.write("--------------------- \n")
+    f.write(stringf)
+    f.write("--------------------- \n")
     
 f.close()
 
